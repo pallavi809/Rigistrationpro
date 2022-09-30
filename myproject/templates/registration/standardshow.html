@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>standard data</title>
+{% endblock %}
+
+{% block c1 %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>standard</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody style="background-color:white;">
+            {% for i in object_list %}
+            <tr>
+                <td>{{i.stud_std}}</td>
+
+                <td><a href="{% url 'stdupdate' i.id %}"><button>Update</button></a></td>
+                <td><a href="{% url 'stddelete' i.id %}"><button>Delete</button></a></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

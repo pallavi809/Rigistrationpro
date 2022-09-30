@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Teacher delete Confirmation</title>
+{% endblock %}
+
+{% block c1 %}
+<div class="container">
+    <div class="jumbtron">
+        <form method="post">
+            {% csrf_token %}
+            <h3>Do you want to Delete <span style="color:red;">{{data.name}}</span> Record?</h3>
+            <input type="submit" value="Yes" class="btn btn-danger">
+            <button class="btn btn-success"><a href="{% url 'showt' %}">No</a></button>
+        </form>
+    </div>
+</div>
+{% endblock %}
